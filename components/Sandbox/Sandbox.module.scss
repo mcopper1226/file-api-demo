@@ -1,0 +1,33 @@
+.sandbox__container {
+  margin: var(--spacing-xxl) 0;
+}
+.sandbox {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  &--iframe-mode {
+    gap: 0px;
+    .sandbox__panel-inner {
+      box-shadow: none;
+    }
+  }
+  &__panel {
+    --panel-border: var(--color-neutral-20);
+    flex: 1;
+  }
+  &__panel-inner {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+    border: 1px solid var(--panel-border);
+  }
+  @media screen and (min-width: 1100px) {
+    flex-direction: row;
+  }
+}
+
+.sandbox--stacked {
+  flex-direction: column;
+  .sandbox__panel--code {
+    --panel-border: black;
+    order: 2;
+  }
+}
